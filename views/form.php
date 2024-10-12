@@ -50,6 +50,14 @@
             </div>
         </div>
     </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('tgl_lahir').value = today;
+    });
+    </script>
+
 </body>
 
 </html>
