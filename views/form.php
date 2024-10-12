@@ -10,39 +10,45 @@
 
 <body>
     <div class="container mt-4">
-        <h1><?=isset($employee) ? 'Edit' : 'Tambah'?> Pegawai</h1>
-        <form action="" method="post">
-            <div class="mb-3">
-                <label for="nama" class="form-label">Nama</label>
-                <input type="text" class="form-control" id="nama" name="nama" value="<?=$employee['nama'] ?? ''?>"
-                    required>
+        <h1 class="text-center"><?=isset($employee) ? 'Edit' : 'Tambah'?> Pegawai</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form action="" method="post">
+                    <div class="mb-3">
+                        <label for="nama" class="form-label">Nama</label>
+                        <input type="text" class="form-control" id="nama" name="nama"
+                            value="<?=$employee['nama'] ?? ''?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="alamat" class="form-label">Alamat</label>
+                        <input type="text" class="form-control" id="alamat" name="alamat"
+                            value="<?=$employee['alamat'] ?? ''?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="tgl_lahir" class="form-label">Tanggal Lahir</label>
+                        <input type="date" class="form-control" id="tgl_lahir" name="tgl_lahir"
+                            value="<?=isset($employee['tgl_lahir']) ? formatDateForHTML($employee['tgl_lahir']) : ''?>"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_ruangan" class="form-label">Nama Ruangan</label>
+                        <select class="form-control" id="id_ruangan" name="id_ruangan" required>
+                            <option value="">-Pilih data-</option>
+                            <?php foreach ($rooms as $room): ?>
+                            <option value="<?=$room['id_ruangan']?>"
+                                <?=(isset($employee) && $employee['id_ruangan'] == $room['id_ruangan']) ? 'selected' : ''?>>
+                                <?=htmlspecialchars($room['keterangan'])?>
+                            </option>
+                            <?php endforeach;?>
+                        </select>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <a href="index.php" class="btn btn-secondary">Kembali</a>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </div>
+                </form>
             </div>
-            <div class="mb-3">
-                <label for="alamat" class="form-label">Alamat</label>
-                <input type="text" class="form-control" id="alamat" name="alamat" value="<?=$employee['alamat'] ?? ''?>"
-                    required>
-            </div>
-            <div class="mb-3">
-                <label for="tgl_lahir" class="form-label">Tanggal Lahir</label>
-                <input type="date" class="form-control" id="tgl_lahir" name="tgl_lahir"
-                    value="<?=isset($employee['tgl_lahir']) ? formatDateForHTML($employee['tgl_lahir']) : ''?>"
-                    required>
-            </div>
-            <div class="mb-3">
-                <label for="id_ruangan" class="form-label">Nama Ruangan</label>
-                <select class="form-control" id="id_ruangan" name="id_ruangan" required>
-                    <option value="">-Pilih data-</option>
-                    <?php foreach ($rooms as $room): ?>
-                    <option value="<?=$room['id_ruangan']?>"
-                        <?=(isset($employee) && $employee['id_ruangan'] == $room['id_ruangan']) ? 'selected' : ''?>>
-                        <?=htmlspecialchars($room['keterangan'])?>
-                    </option>
-                    <?php endforeach;?>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary">Simpan</button>
-            <a href="index.php" class="btn btn-secondary">Kembali</a>
-        </form>
+        </div>
     </div>
 </body>
 
