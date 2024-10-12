@@ -1,9 +1,13 @@
 <?php
 
+session_start();
+
 require_once 'config.php';
 require_once 'functions.php';
 
-$action = $_GET['action'] ?? 'list';
+$action  = $_GET['action'] ?? 'list';
+$message = $_SESSION['message'] ?? null;
+unset($_SESSION['message']);
 
 switch ($action) {
     case 'list':
@@ -12,7 +16,11 @@ switch ($action) {
         break;
     case 'add':
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            addEmployee($pdo, $_POST);
+            if (addEmployee($pdo, $_POST)) {
+                $_SESSION['message'] = 'Data pegawai berhasil ditambahkan.';
+            } else {
+                $_SESSION['message'] = 'Gagal menambahkan data pegawai.';
+            }
             header('Location: index.php');
             exit;
         }
@@ -35,7 +43,11 @@ switch ($action) {
         }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            updateEmployee($pdo, array_merge(['nip' => $nip], $_POST));
+            if (updateEmployee($pdo, array_merge(['nip' => $nip], $_POST))) {
+                $_SESSION['message'] = 'Data pegawai berhasil diubah.';
+            } else {
+                $_SESSION['message'] = 'Gagal mengubah data pegawai.';
+            }
             header('Location: index.php');
             exit;
         }
@@ -46,7 +58,11 @@ switch ($action) {
     case 'delete':
         $nip = $_GET['nip'] ?? null;
         if ($nip) {
-            deleteEmployee($pdo, $nip);
+            if (deleteEmployee($pdo, $nip)) {
+                $_SESSION['message'] = 'Data pegawai berhasil dihapus.';
+            } else {
+                $_SESSION['message'] = 'Gagal menghapus data pegawai.';
+            }
         }
         header('Location: index.php');
         exit;

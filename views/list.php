@@ -14,6 +14,13 @@
             <h1>Daftar Nama Pegawai</h1>
             <a href="index.php?action=add" class="btn btn-primary mb-3">Tambah Pegawai</a>
         </div>
+
+        <?php if (isset($message)): ?>
+        <div class="alert alert-info">
+            <?=htmlspecialchars($message)?>
+        </div>
+        <?php endif;?>
+
         <table class="table table-bordered">
             <thead>
                 <tr>

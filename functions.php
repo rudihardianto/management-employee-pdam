@@ -2,7 +2,7 @@
 
 function getAllEmployees($pdo)
 {
-    $stmt = $pdo->query('SELECT p.*, r.keterangan as nama_ruangan FROM pegawai p JOIN ruangan r ON p.id_ruangan = r.id_ruangan');
+    $stmt = $pdo->query('SELECT p.*, r.keterangan as nama_ruangan FROM pegawai p JOIN ruangan r ON p.id_ruangan = r.id_ruangan ORDER BY p.nip DESC');
 
     return $stmt->fetchAll();
 }
