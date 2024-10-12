@@ -1,6 +1,6 @@
 # Employee Management System (CRUD)
 
-Proyek ini adalah aplikasi manajemen pegawai sederhana yang memungkinkan pengguna untuk melakukan operasi CRUD (Create, Read, Update, Delete) terhadap data pegawai. Aplikasi ini dibangun menggunakan HTML, PHP, CSS, JavaScript/jQuery, dan memanfaatkan API JWT untuk komunikasi dengan database.
+Proyek ini adalah aplikasi manajemen pegawai sederhana yang memungkinkan pengguna untuk melakukan operasi CRUD (Create, Read, Update, Delete) terhadap data pegawai. Aplikasi ini dibangun menggunakan HTML, PHP, CSS, JavaScript/jQuery, dan memanfaatkan MySQL sebagai database.
 
 ## Fitur
 
