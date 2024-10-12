@@ -27,8 +27,9 @@
             </thead>
             <tbody>
                 <?php foreach ($employees as $employee): ?>
+                <?php $no = 1;?>
                 <tr>
-                    <td><?=htmlspecialchars($employee['nip'])?></td>
+                    <td><?=$no++;?></td>
                     <td><?=htmlspecialchars($employee['nama'])?></td>
                     <td><?=htmlspecialchars($employee['alamat'])?></td>
                     <td><?=date('Y-m-d', strtotime($employee['tgl_lahir']))?></td>
