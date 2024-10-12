@@ -26,10 +26,10 @@
                 </tr>
             </thead>
             <tbody>
+                <?php $i = 1;?>
                 <?php foreach ($employees as $employee): ?>
-                <?php $no = 1;?>
                 <tr>
-                    <td><?=$no++;?></td>
+                    <td><?=$i++;?></td>
                     <td><?=htmlspecialchars($employee['nama'])?></td>
                     <td><?=htmlspecialchars($employee['alamat'])?></td>
                     <td><?=date('Y-m-d', strtotime($employee['tgl_lahir']))?></td>
