@@ -19,7 +19,7 @@
 
 
 CREATE TABLE `pegawai` (
-  `nip` int NOT NULL AUTO_INCREMENT,
+  `nip` int(11) NOT NULL AUTO_INCREMENT,
   `nama` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `alamat` varchar(200) NOT NULL,
   `tgl_lahir` datetime NOT NULL,
