@@ -53,8 +53,12 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', (event) => {
-        const today = new Date().toISOString().split('T')[0];
-        document.getElementById('tgl_lahir').value = today;
+        const tglLahirInput = document.getElementById('tgl_lahir');
+        // Hanya set tanggal hari ini jika nilai input kosong
+        if (!tglLahirInput.value) {
+            const today = new Date().toISOString().split('T')[0];
+            tglLahirInput.value = today;
+        }
     });
     </script>
 
