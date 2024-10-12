@@ -8,12 +8,11 @@ Proyek ini adalah aplikasi manajemen pegawai sederhana yang memungkinkan penggun
 -   Edit Pegawai: Pengguna dapat memperbarui informasi pegawai.
 -   Hapus Pegawai: Pengguna dapat menghapus data pegawai dari tabel.
 -   Tampilan Tabel Pegawai: Menampilkan daftar pegawai yang ada di sistem beserta informasi mereka.
--   Panel Admin
 -   Validasi Input: Form input dilengkapi dengan validasi seperti pemilihan tanggal dan ruangan.
 
 ## Teknologi yang Digunakan
 
--   Frontend: HTML, CSS (dengan Bootstrap), JavaScript, jQuery.
+-   Frontend: HTML, CSS (dengan Bootstrap), JavaScript.
 -   Backend: PHP.
 -   Database: MySQL.
 
